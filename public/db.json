@@ -1,0 +1,46 @@
+{"marvel": [{
+  "id":1,
+  "name_of_character": "Tony Stark",
+  "image": "https://c4.wallpaperflare.com/wallpaper/24/526/333/iron-man-marvel-comics-wallpaper-preview.jpg",
+  "role": "Iron Man",
+  "Power": "Rich and Smart",
+  "Birth Name": "Robert Downey Jr.",
+  "Age": "59"
+
+},
+{
+  "id":2,
+  "name_of_character": "Steve Rogers",
+  "image": "https://c4.wallpaperflare.com/wallpaper/7/358/417/captain-america-download-hd-for-pc-wallpaper-preview.jpg",
+  "role": "Captian America",
+  "Power": "Strenght and Self-healing",
+  "Birth Name": "Chris Evans",
+  "Age": "43"
+},
+{
+  "id":3,
+  "name_of_character": "Thor Odinson",
+  "image": "https://c4.wallpaperflare.com/wallpaper/140/245/128/thor-chris-hemsworth-the-dark-world-movie-wallpaper-hd-for-desktop-3840%C3%972400-wallpaper-preview.jpg",
+  "role": "Thor",
+  "Power": "Thunder",
+  "Birth Name": "Chris Hemsworth",
+  "Age": "41"
+},
+{
+  "id":4,
+  "name_of_character": "Bruce Banner",
+  "image": "https://c4.wallpaperflare.com/wallpaper/1015/886/533/hulk-the-avengers-marvel-cinematic-universe-wallpaper-preview.jpg",
+  "role": "Hulk",
+  "Power": "Strong and Powerful Strength",
+  "Birth Name": "Mark Ruffalo",
+  "Age": "57"
+},
+{
+  "id":5,
+  "name_of_character": "Peter Parker ",
+  "image": "https://c4.wallpaperflare.com/wallpaper/997/794/382/miles-morales-spiderman-miles-morales-spider-man-peter-parker-spider-gwen-hd-wallpaper-preview.jpg",
+  "role": "Spider Man",
+  "Power": "Spider Powers",
+  "Birth Name": "Tom Holland",
+  "Age": "28"
+}]}
