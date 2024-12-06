@@ -22,7 +22,7 @@ body{
     grid-template-rows: 0.5fr 3fr 4fr 2fr 3fr 0.2fr;
     height : 100vh;
     grid-template-areas: 
-    "nav nav nav nav nav nav"
+    "header header header header header header"
     "about about about skills skills skills"
     "project1 project1 project2 project2 project3 project3"
     "education education education experience experience experience "
@@ -31,12 +31,15 @@ body{
     color: black;
     grid-gap: 0.5rem;
 }
-.nav{
-    background-color:rgb(118, 6, 162);
-    grid-area: nav;
+header{
+    grid-area: header;
     border-radius: var(--main-radius);
     padding: var(--main-padding);
-
+}
+.nav{
+    background-color:rgb(118, 6, 162);
+    width: 100%;
+    height: 100%;
 }
 .nav a{
     float: left;
@@ -46,6 +49,7 @@ body{
     text-decoration: none;
     padding:14px 80px;
     font-size: 15px;
+    font-weight: bold;
 
 }
 .nav a:hover{
@@ -148,13 +152,16 @@ body{
     text-align: center;
     color: black;
 }
+ul{
+    list-style-type: none;
+}
 @media only screen and (max-width:500px){
 
     .container{
         grid-template-columns: 1fr;
         grid-template-rows: 0.4fr 1.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 0.2fr;
         grid-template-areas: 
-        "nav"
+        "header"
         "about"
         "skills"
         "project1"
@@ -193,33 +200,30 @@ body{
             }
         }
     
-
-
-
-
     </style>
 </head>
 <body>
     <div class ="container">
-
-        <div class="nav" id="mynav">
-            <a href="#about" > About </a>
-            <a href="#skills"> Skills </a>
-            <a href="#project1"> Project1 </a>
-            <a href="#project2"> Project2</a>
-            <a href="#project3"> Project3</a>
-            <a href="#education"> Education </a>
-            <a href="#experience"> Experience </a>
-            <a href="#achievements"> Achievements </a>
-            <a href="#contact"> Contact </a>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()"> <i class="fa fa-bars" style="font-size:24px;color:white"></i></a>
-        </div>
-        <div id="about"> 
+        <header>
+            <nav class="nav" id="mynav">
+                <a href="#about" > About </a>
+                <a href="#skills"> Skills </a>
+                <a href="#project1"> Project1 </a>
+                <a href="#project2"> Project2</a>
+                <a href="#project3"> Project3</a>
+                <a href="#education"> Education </a>
+                <a href="#experience"> Experience </a>
+                <a href="#achievements"> Achievements </a>
+                <a href="#contact"> Contact </a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()"> <i class="fa fa-bars" style="font-size:24px;color:white"></i></a>
+            </nav>
+        </header>
+        <section id="about"> 
             <p> <b> About: </b></p>
         <img src="data:image/png;base64,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" alt="picture">
         <p> A goal-oriented individual with a BTech in Computer Science and Engineering looking to join where I can demonstrate my technical and non-technical abilities while also contributing to personal and organizational progress. I am eager to engage with fellow students and contribute to a vibrant campus life by participating in student organizations, events, or peer mentoring programs. </p>  
-        </div>
-        <div id="skills">
+        </section>
+        <section id="skills">
             <p> <b> Skills: </b></p>
         <p> <b>Technical Skills : </b> </p>
         <p> C, C++, Python, SQL, HTML, CSS, JavaScript  </p>
@@ -229,36 +233,36 @@ body{
         <p>Microsoft word, Excel, Presentation  </p>
         <p> <b> Operating System : </b> </p>
         <p>Windows (10,8.1,8), Linux, iOS   </p>
-        </div>
-        <div id="project1"> 
-            <p> project 1</p>
+        </section>
+        <section id="project1"> 
+            <p><b> project 1</b></p>
             <img src="https://www.springboard.com/blog/wp-content/uploads/2021/11/Intermediate-Machine-Learning-Projects.jpg" alt="project 1">
             <p> <b> Machine Learning Project </b> - Aug 2021 - Nov 2021 </p>
             <p> I successfully developed a Machine Learning-based Hand Written Digit Recognition model using Convolutional Neural Networks(CNN) that generated significant 99 percent accuracy.  </p>
-        </div>
-        <div id="project2">
-            <p> project 2</p>
+        </section>
+        <section id="project2">
+            <p> <b>project 2</b></p>
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIGjxE7kX3uLlCoBQFnq5x9e-yuVSY3xctVA&s" alt="project 2">
             <p> <b>Supply Chain Sustainability Analysis </b> July 2022 – Nov 2022  </p>
             <p> I successfully developed a Data Analysis project using python and tubule using K-Means Clustering that determines warehouse locations. </p>
-        </div>
-        <div id="project3">
-            <p> project 3 </p>
+        </section>
+        <section id="project3">
+            <p> <b>project 3 </b></p>
             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT0AAACfCAMAAAC85v7+AAAAvVBMVEUxhZwAAAD///8yiqIUeZNjm6zA194zjKQyiKA0jqcxhp4zi6QqgpoyhpzC2eDt9PYreI0QLTWmxM8tfpQpcoYTNT4fVmUXQEsnbH8kZXccUF4MIigaSVZMj6P3+vsAdI7Q4uYFDxIOKTAKHSIIFxsaSlciXm/b6e0LHyQSMzzv9feRtsKhwct+q7q2ztZWlagAbIl1prWIsb+TvckAY4J1q7pfmq19prWmvsZEYWq3tLPf394eKS2rzNU3l7P7tOakAAAS4UlEQVR4nO1daWOiyhKVRdkaUdG4K6iRRI1G573MfUvm//+sV1UNdOMkJpIw6n2cD5m4AM3pWk5VN5lKpUSJEiVKlChRokSJEiVKlChRokSJEiVKlChRosQpsEsP4Jah70r+8oKxljeulvTlAdP3njqZ/CzZywF9HKiITaSX/J0Hl+kbNYa3+6Ffejy3hSk4bYKJuinZOwO6W1dlHErX/SzAaVuquppI7O1L9j4JNn1aqepW3wryJuNLD+pGwKbVSFWjMaRZYXyTS4/qRjDdgUrx9ihR2C6lb1UmjU9gOoZk4T3F8o6x10hdkWQp2fsQxN3qIEljfaeSYA5K9k7CZeSz0SFTVrAnlXLHtmTvFNh0H6EweXUz0oS11B+gldWy1DgBfXqgwiL6h6q+yPTpdfWw8kqx/C7AZVkrTq71KfwYS0zpweSfUXTdYlmf6owx+Om6F7h2NUhlXWuM+XUqfeqt9kE0UXd/fFyfA0z9y5bX4952N/2zc8ym+g/RCwATOxxVZUwN/tp60eTPz+rnILcyIPBUpx8f8l0As6tTAyVFpUXyJB2D66qvtZZXn1xn0mB6oGZR/0ONSDZ1WyiEW/IIptRYmaTssRd1Hay9+nWKZTaeqMdYucXTx3S2RoESHZ7H+iq9tPfMf58mjgpy7yl6WtWuUiy/RR72M4qlj+n6nuyttnueBmtXjCGY8n/15IuQUKpedVWrXSV7b5EHJlDkNXW9WqMI+6TrzI3UXVVcuFZRJc/Vxx5O5aQa1a+xs/xbzEtQZF1U4zNWhezOgJ6JfxDXXf+MTZBGtycmtclTvb6+PrnH9u+QB/dW1GghDRAinB8d+3jTV3HZF74MtMGrszH9vhp7rdfgCpck3zW9AlsaeotfACUd9Y6DZ2kUPvm0WrHhm1MupIKfQW0dXaFYZu+SB9VSMZd04xmr6W6FUcDbTEXKVZ+91HETx3j967W+9q5PLLOD+j4Kq8op6nl4dvRbMEIp5UbPYub0eEltXdsET1colvXaCfYKyhvc3iLc1sN/VcdSyq37ZI106SlxuzpMo3W0n+hXZ3x87t9BQYEPw96kRdUMXzHz5JTbQiYj8lsdjdR7mj550W7yz+gPlo+fhO69w1yR7EWTH2Ndunwm5T6teTJm+g78Itrray94GQfe4QrF8gfsFeMr6utz/JtL2aIup9zxFoQ6owpDDV4qW6823gWrtR+0bo69Ii4Jse4pSUe8SPwxlUYxjSIogJ8idbIdvwSrTWUfeU/+xqtdXdQ7KfdQUhRyya2QQpy9fUUIlpX++uxuVupqPT5E0VNl7UVVd+ttx9dneUK4vokfhSgWCHuCCTI6OeUGz2MId8F+V/PqL+Ma0LYLvE3lGrlLJcPbKKhUk2yaTN/TpZQbBerktfoUeetx/AM7CYWM4xugv0+eVwh5UD+sdekF6mPZAaLDvuYF1fEWXBZ+BNVr3jEqtmb+hmI6QhD2pOVGrCZqcsqdbKLosAOz24z3+OOauUO83d4DI2CFZDkMexIjLFLX00zi31TroPB2YHZ7cNkrzLQy3q10C1o9dSEkrAV/zK+/+KvMhSdPkG5vwOwI7xRrBRUavG0Sxc+uuBUwr/XxACKvXr1+s+N4J+3uipn5eC8ozQ3T9fE6mkTbrOgMDpWbMDuONxVzUX35xNJ/THVWbXkTr7aNovo+9d1ofRsem4LtfievsCU1N77A6lCfTLwg8KLafr/xIiI12ux0dlPcVd40vqJMjz2llwDGJlHr5WfLi7Yv+60atXb6bZkdxxuR76Wg20i6sZ7nrerrKhggkPZzu7pV6hC/dVqiwhaE4itF2+p+E62Cw8shWEWbsX+r1FXSRChQ2C5NWtuuH3aHGqTaanXjecHBvWHmEGx9xF5xS7mHTdDarFbBOiaQ3Th1lXTRWcq4xV1q6kWT3R60SgDa5PapI2TZK6a7ksBVwehebjnSHcHPpo3CkgaCVaGW+PtQV/mz7FVuTg9/BJZl7zp3aV4tjvosV7lL83rBWC0QuMKV06sGWwd1gaB8KOcs+JMy7uUH29dkFNUj+JtC3648Ca+l7Z2Do3WZ0nPPAhu3JPz1r5526RHdEEw7213+tzLIRZ9tm989tCw0zby6eTX78/9k2PtPPvY0f9l3vjaSk5+62p2i3F0Zfa6jKP/9sX5NsF73lV4OI3IbiqLMv2B9ttnvGSc+N9twAaVn579CETCU0GZ6lWu+SVXXuoqf4zRwGGB50jbMU+SyUFGaJw7nFxh9zby/HVY4t7BaW9dqW/xrFOZDLgsy6OY6p9gze73je9e05B2Hju/LppXdTqAN3mDP1gqOtR/AtcKQRsB06rvZbaVzyoHeg9nHm+se0SMT4DSBXSdDidlVmrGhGwtiX760pslzYffwC42M55qNQfuykdBQFLm4MDrKXR72KuYQPTdjCo7vi3uzid5MSCVzanLCreExe/5QGWRGgp9nZ8c/Ntc/DsgabTEA2z+e389CQ9voW6YIbgYkyfv0/s2748DoajN8i2d47pg9YZrWg5LJsaYFtjuyHOkEDh4zNy64Ych1QqVr0W/4Q+srw3yhxHTmihLe3y3TuTCQD7EPsHdEDyDEtxT+fbSj0BK+zvCjphW/0irtEb6x6C79dHwaeftFI5/RVEIX46+Ls2qMlG6OSGJqfr+jxBjGJ2hQHki/48pscBB7C7x9l7tuW8S6HmePs+k3FYF+/BXXp5eN84f7fUCXacNIOuHIpeiVQ+2ZPfnuFP6mS4HuPp0LC+i9tzTJ+DBPd5UZfENzTEaGNJ8/+tLRc862diefvhtHg5i9Xs4b/xZAkgUNqjUpZmvLbA75HOIAJoyD80/WM4utTXNsNK5u39fSsIqk9JWm6VYGjw/p0fdSHFzwo81uhr0kdXD22l+5+y+DoUnwgfhAYjdHxqV8K90e3T/XMGF8/8Kxm+n0OPBeM3w0zZ58dAeOcA1rTmfiRzsZ9ubcfG1reXnPdR1wGb/NB8I+KhfeQYY8JaRT/KJbDiv4wpRdL02kSOhw8aiZS/loiI1au8vnI+yRp/P0kIL4Mv2Y0s5FN+lS9NHIy37dZ+TLZ8FLUPn2bJA+ib2g/WSMpxM7M7n77KGrWZmoCfFDOh8qPC4VBTAymA3x8pKKj2a+gj9GOKLG2UnD1ZrZu0PrkhgBU7EepU+HpNB4aad0l33r7uhgX37pJzFQACOjOU9f5mlqfB9wsDMT5zlUcoURXznCo8HlGgfUplYofbpwMbCNYsNxtIaSQU8LMy/ditbJfgMqEk2ajjxNje8Dee0wTG/87OPBdoZZ8wNxK14MLS6cE4RY0iRZGg7PJuz5L3gtWSO4qZklT1nYrsTnw2XbLpoclPpnJw3SKwNhQEiGL4fCRytrnXNTXBIyfNb0QguMcvBLDGlJMyHSRohZSU4zlzU9qm1T5HBcdNK+4GA0x9gliRBIG5m0MjNcEDA8qULMYpmE2vVJ5YgDRgYmbHE6PE5Wz/mWEb4RhjQY//wExlATi7Q4esS4nt5uRxk45m+1gmlx68KeGJxCfN4B0/NdKWzOLDDUUEzwEF3f7N0lEvN7m/V5tngZmQR5LjDl9oWrNSFD9o2lEoezJUSubKVFOTKmIz6FsNxFG33RFWyFBpz/Ubxukly2rWR6vpU91srxlJQknnKwZx/JvRDu3xoocWAfQCGakcNDjPJJecHVhi2uH/5agLMaUihmZqgMxCUWIa+MExUz+lb2tnme9BFTm6e55xwpCkUxrU74kHDpZzVNGwlLbv6REqYpyWE0qoYlsddwgeSM8T5CAZJ+I1838h3orRwPSsm2l2MwNlOyaBqWRCiIY0u8WvAmQHLzZHyGJIcdZwCqRWKrAdSzkXx6XD0xkgucrsvt6lnYbXM8Z+YKx2jnEe4ZBaFgg965T19gl8U6EreiPKF1JJlrKFPulcfkjXChtBvKwspYNx6TXjJ0TtS5J//ywns4lz5bCIJ8ZU+2yQISReLzHitViV6MrG4lTF7i4YYkmFlmMsKZ0rMWzV+iLgPpNzBF4DzdUUv+2F+h9Elx53y1jGQYmVID0qBEwMJy5bRAzXlJYoKxu5ro7lHo0DQxE8oS163k01Mp7qTO3jtle7nYO5M+6V7ziU9zMJCsA9KgLCGxpSKxhx0SKU1TRywUH1PpYKcvH5U7a9jNVtIYXUQX4u6Et+Rk77zHuyU9drwi+1n65CwJgVwOVPCxK0JDiJ4rSRhUHMKQIEqiKckaaAnaUWogDrmvmqm5Lgtg76xnbKX2W072YgnCbair8fXEGI1M3BuhKWoih5L8EEmFcyF7at/WGlKPpt8zkV83re9OdeZzsrc95+/VyXGnn7dZRs51N0jMSTYeW7Y1uoAp6AorshvyNR5XKJxFE9/QKCvRHPPdha6dRopTXYJcOfc88jKmkH+TEprHXTu2Pdn1OpbMHm+ri1CBniyxx9WbgwNaDFK2SB7yYjcOSGLCTzXm2a5eOwvR+eRVHCE4cq+xkOq4q3D2MoUtsMc9ty1MRbNiQn2Mc5w9CpVx0kIR8Iiphq+q0fmGFA748rpr0MYPPOKks+DunDMwbZ1PXkbL5l5jQdtbUvIA23May0XsyJoVS6Im+uNDsh4ep10/HcAMyQrjygE/HGBXNKQswo+nrl88vQ5OlhF+xN6ZYK2zycsYSu7HDaja4msUtCKLv/VRtyFddPdLa0GN5hjxWjbePNnekhYH4l0p+GHPSm2PiqEhLUHG7CHhC+s+9fXvgb6tnUlepkod5u5YUNJdUl9vQHsrekgmNk3cWKH0cS1DbNrh7JFao8jRwyXcYVx3IXEN7LTEuwkYRQA8JO5I4WczpyGs9VvAXs58YMA15PWuvIIFbgfsYMGo30A3iOZGKhBvn/blNnBlMRQH8P2O+F1q0pD1xovnxJ5rDhL95+LC0MzAVB3vL8UvdzU3/OZdQOe6XipkKXPkWgsn4CoXcI8uRkvCDniuhUUMfYp7fPom+aMrDniY8+kix+ZbN2LHNMjl25mdLCFDOmP60XN7Noryi+7ESCr0PlXiuZdYXNwaCsl2mWYCcFPaF0Nsoet2LbzWfWLdoHebs3i/G25abtjounHdZVJvxpF2ciCzWj/hl3Iuf/tUrVE4YmXWd7Bp9IVN7xqxR50peo3sWfiSx6U+mhE6a7KTAONet5P05kM0TTwk3j3qUL4wBHs4zAb/iZbtIt/uxdnjfeHQ12jNuXmqWfbBiXBDh4ME8G0s4GtzK4l7NEkLS7sXW/iw7dLuJtZO7NHCMP/YIs+1RSBk3KZT24OjZxqFh/4l97EQeRUbAvP8o0btSaCZ3ZFMTrvtIwPYG/FT+uiKKJoT2wOnDsEWw0pStTZov8qQ73e0ZpQOeH8Lv4Cj8ym4EnvYkRxpLqaqS67n0jr9gO5I+RJ7yNtSw1QYr9P0oMCFu4uDukbsNUTcg+JrYA2UGfkd7tqtUB/r0UjjpB9HPwQ1o32SRZQWMaCCVMTLfadiORck07jKAu8ZfIG9Pt4euipvEbo+VPzOQBESBMQH0DGI2TPnig/H8F3wzgOv0STJhEZmJXuq4etNzLZYkJPtAW34oARcrnvJXd+8EYm9AazEv2B7Jm07FQ+TQWQaaVYnYcPgES/d0Gj2lHsLvJubIuSAB8N1ga3Yc5HtNtYgCXtON2GPmjRAG65ugGK57BMHJFpxjJjQ5l8YSgOTIpZU8dJIGxVL0qt2K1xL0q4WhDlT5tiBviezb3CL1cIkzuGwBgaQlTyyoHH2+jF72hADhKstlONh/GHQBrQk8H1hdbRNCw6NWPy7UIPC/WFzL7nKnYZ3y+mketh3mjzoO0sixQX2Zon1m2CrYM/JozcWsYenaeB/j1gJebZQmhd1XG58cxwjNrvzt/egRgMJYTfi/ZN2W+n2IFfEe7grjxRUoeSgK/io00a/YvFr9Bb8ytZCbKywQPCAZ/N5NSsD6mBgGQ3JxGgMuVBsQ+F2WfaoVYQTiWos/z5Mn8wKlcQjX6IN4Vxt3pHizVCuZ9D2wKbCpdWHC9+DfdIe3SGMwOlLazzwoY2V2ciwaflx0bw3MbPB2dswFeG8Qr2ZRX6F+k2IJajZ+MJ+LrxBon4QcrMwbTzVjE7YUx5mg4ZG80QpUwNxjhmgafVNuzfs3jWABOqUpeqN3Q3g914Xt5qay8elaYF/NIYd3zV7nSWIFxsnfnnh3XtQMnYSj1XyPR9JMP0GWYHBlpL7G+RYpqs5Dr7ZaMTPSdFXe/xBFdMx+CMKy9FIPEZV0SiaWA3sOWhWnHwM/mYyx1fwqD02KkjogQR7+AY/+PQzs8d/yEAz3pg7+9KeeRIO7bAhWYWl6ZU9uX7l8PmyNdkexKWHy7vCDcFcDofNzoDvnMKqLX979P8RGsBw4pZkR36mscQnIAdl1l9ebBx/A1z4T0yUKFGiRIkSJUqUKFGiRIkSJUqUKFGixHXif4aKTu+ol1eqAAAAAElFTkSuQmCC" alt="project 3">
             <p> <b> Secure Transaction of Crowdfunding and Deployment </b> - Dec 2022 – April 2023</p>
             <p> I successfully developed a Solidity project using Remix ID for making secure transactions for an organization and also developed a lottery system for present generation in a safe way.  </p>
-        </div>
-        <div id="education">
+        </section>
+        <section id="education">
             <p> <b> Education: </b></p>
             <p> <ul> <li> <b> <p> Master of Computer Science </b> </p> <p>University of New Haven, CT </p></li></ul></p>
             <p> <ul> <li> <b> <p>Bachelor of Technology Computer Science </p> </b> Gitam Univeristy, Vizag, India </p> </li></ul></p>
-        </div>
-        <div id="experience">
+        </section>
+        <section id="experience">
             <p> <b> Internship </b></p>
         <p> Phoenix global, Telangana, India </p>
         <p> I successfully developed my Internship in Phoenix Global and performed an analysis on the app data which has be collected from the google Play Store which has multiple attributes and found which application is used more with the help of EDA (Exploratory Data Analysis).  </p>
-        </div>
-        <div id="achievements">
+        </section>
+        <section id="achievements">
             <h2> Achievements: </h2>
         <p> <ul><li>Hospitality Specialist-TEDx GITAMVizag </li> 
             <li>Registrations Head- Gitam Model United Nations</li>
@@ -268,25 +272,25 @@ body{
             <li>Sponsorship Manager- GUSAC GITAM </li> 
             <li>Publicist- GUSAC GITAM </li> 
             </ul></p>
-        </div>
-
-        <div id="contact">
+        </section>
+        <footer id="contact">
             <h4>Contact: </h4>
             <p> <b> Address</b> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas vitae consectetur illum placeat totam, rerum delectus, quasi commodi aut iusto inventore repudiandae ex voluptatem illo.</p>
             <p> <b>phone: </b> 123456789</p>
             <p> <b> Mail: </b> hemanthsaigogineni@gmail.com </p>
             <p> <b> Linkedin: </b> hemanthsaigogineni </p>
-      </div>
+        </footer>
     </div>
+    
     <script>
         function myFunction() {
-    var x = document.getElementById("mynav");
-    if (x.className === "nav") {
-      x.className += " responsive";
-    } else {
-      x.className = "nav";
-    }
-  }
+            var x = document.getElementById("mynav");
+            if (x.className === "nav") {
+                x.className += " responsive";
+            } else {
+                x.className = "nav";
+            }
+        }
     </script>
 </body>
 </html>
