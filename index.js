@@ -53,4 +53,4 @@ async function getDataFromMongo(client) {
     }
 }
 const PORT = process.env.PORT || 1102;
-server.listen(PORT, () => console.log(`Our server is running on port: ${PORT}`))\
+server.listen(PORT, () => console.log(`Our server is running on port: ${PORT}`))
